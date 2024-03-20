@@ -1,4 +1,6 @@
-![alt hola](./data/mlops.jpg)
+<p align="center">
+ <img src="data/mlops.jpg"  height=600>
+</p>
 
 # <h1 align=center> PROYECTO INDIVIDUAL Nº1
 <h1 align=center> Machine Learning Operations (MLOps) </h1>
@@ -72,7 +74,18 @@ Crearemos la columna 'sentiment_analysis' aplicando análisis de sentimiento con
 En mi proyecto se presentará un video explicativo, resumido, mostrando brevemente la estructura del proyecto, el funicionamiento de las consultas de la API y conteniendo una breve explicación del modelo de ML utilizado. 
 
 
-## Recursos: 
+## Recursos:
+## Tecnologias y herramientas utilizadas
+
+Para el desarrollo del EDA (*Exploratory Data Analysis*), se utilizaron las siguientes herramientas y tecnologias:
+
+
+![VSCode](https://img.shields.io/badge/-VSCode-333333?style=flat&logo=visual-studio-code)
+![Python](https://img.shields.io/badge/-Python-333333?style=flat&logo=python)
+![Jupyter](https://img.shields.io/badge/-Jupyter-333333?style=flat&logo=jupyter)
+![Pandas](https://img.shields.io/badge/-Pandas-333333?style=flat&logo=pandas)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-333333?style=flat&logo=WordCloud)
+![Seaborn](https://img.shields.io/badge/Seaborn-333333?style=flat&logo=Seaborn)
 
 Para la realización de mi proyecto, se me facilitó: 
 

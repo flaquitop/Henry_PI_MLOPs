@@ -14,25 +14,23 @@ df = pd.read_csv('csv/Df_Final.csv')
 
 @app.get('/PlayTimeGenre/')
 def PlayTimeGenre(genre: str) -> dict:
+    """Muestra el año con mas horas jugadas para un género dado
+
+    Argumentos:
+        genero (str, optional): insertar genero del juego.
+
+        Ej: action, adventure, casual, free to play, indie, rpg, simulation, strategy
+
+
+    Returns:
+        dict: _description_
+    """
     genre = genre.capitalize()
     genre_df = df[df[genre] == 1]
     year_playtime_df = genre_df.groupby('year')['playtime_forever'].sum().reset_index()
     max_playtime_year = year_playtime_df.loc[year_playtime_df['playtime_forever'].idxmax(), 'year']
     return {"Género": genre, "Año de lanzamiento con más horas jugadas para Género :": int(max_playtime_year)}
 
-"""
-@app.get('/UserForGenre/')
-def UserForGenre(genre: str) -> dict:
-    genre = genre.capitalize()
-    genre_df = df[df[genre] == 1]
-    max_playtime_user = genre_df.loc[genre_df['playtime_forever'].idxmax(), 'user_id']
-    year_playtime_df = genre_df.groupby('year')['playtime_forever'].sum().reset_index()
-    playtime_list = year_playtime_df.to_dict(orient='records')
-    result = {
-        "Usuario con más horas jugadas para Género " + genre: max_playtime_user,
-        "Horas jugadas": playtime_list}
-    return result
-"""
 
 @app.get("/UsrForGenre")
 def get_user_for_genre(genero: str = None )-> dict:
@@ -40,6 +38,7 @@ def get_user_for_genre(genero: str = None )-> dict:
 
     Argumentos:
         genero (str, optional): insertar genero del juego.
+
         Ej: action, adventure, casual, free to play, indie, rpg, simulation, strategy
     Returns:
         dict:
@@ -63,6 +62,14 @@ def get_user_for_genre(genero: str = None )-> dict:
     
 @app.get('/UsersRecommend/')
 def UsersRecommend(year: int) -> dict:
+    """_summary_
+
+    Args:
+        year (int): _description_
+
+    Returns:
+        dict: _description_
+    """
     df_filtrado = df[(df['year'] == year) & (df['recommend'] == True) & (df['sentiment_score'] == 2)]
     if df_filtrado.empty:
         return {"error": 'Valor no encontrado'}
